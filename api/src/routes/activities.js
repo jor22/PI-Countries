@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { Countries, Activities } = require('../db.js')
+const { Country, Activity } = require('../db.js')
 const router = Router()
 
 
@@ -9,6 +9,15 @@ const router = Router()
 
 
 router.post('/', async (req, res) =>{
+    // crear actividad y hacer la relacion con el coutry 
+    const { name } = req.body
+
+    const createActivity = await Activity.create(
+        name
+    )
+
+    res.json(createActivity)
+
 })
 
 
