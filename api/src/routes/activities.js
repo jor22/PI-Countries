@@ -12,13 +12,20 @@ router.post('/', async (req, res) =>{
     // crear actividad y hacer la relacion con el coutry 
     const { name } = req.body
 
-    const createActivity = await Activity.create(
-        name
-    )
+    const createActivity = await Activity.create({
+        name,
+        difficulty,
+        duration,
+        season
+    })
 
+    const exist = await Activity.findOne({ where: { name: name } });
+    if (exist) return res.json({ info: "La Actividad ya existe" });
+
+    console.log(createActivity)
     res.json(createActivity)
 
-})
+});
 
 
 module.exports = router
