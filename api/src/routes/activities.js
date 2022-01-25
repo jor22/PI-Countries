@@ -10,6 +10,7 @@ const router = Router()
 
 router.post('/', async (req, res) =>{
     // crear actividad y hacer la relacion con el coutry 
+    // try-catch
     const { country ,name ,difficulty,duration,season } = req.body
 
     const createActivity = await Activity.create({
@@ -25,14 +26,6 @@ router.post('/', async (req, res) =>{
 
     res.json(createActivity);
 
- // Promise.all(countries.map((country) => createActivity.addCountries(country))).then(
-    //     () => {
-    //       res.json(createActivity);
-    //     }
-    //   );
-
-
-   
 });
 
 
