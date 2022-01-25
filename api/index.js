@@ -32,14 +32,13 @@ conn.sync({ force: true }).then(() => {
     axios.get(`https://restcountries.com/v3/all`)
     .then(async  response => {
       response.data.forEach( async country => {
-        // console.log(response.data[0])
         await Country.create({
-          id: country.cioc,
+          id: country.cca3,
           name: country.name.common,
           officialName: country.name.official,
-          flag: country.flags[0],
-          continent: country.region,
-          capital: country.capital, //<----- ? no quiere el valor[0]
+          flag: country.flags[0], 
+          continent: country.region ,
+          capital: country.capital ? country.capital[0] : 'No have Capital', 
           subregion: country.subregion,
           area: country.area,
           population: country.population,

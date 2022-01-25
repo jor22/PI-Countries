@@ -10,7 +10,7 @@ const router = Router()
 
 router.post('/', async (req, res) =>{
     // crear actividad y hacer la relacion con el coutry 
-    const { name } = req.body
+    const { country ,name ,difficulty,duration,season } = req.body
 
     const createActivity = await Activity.create({
         name,
@@ -19,13 +19,23 @@ router.post('/', async (req, res) =>{
         season
     })
 
-    const exist = await Activity.findOne({ where: { name: name } });
-    if (exist) return res.json({ info: "La Actividad ya existe" });
+    const countryNames = await Country.findAll({ where: { name: country } });
+    console.log(countryNames);
+    await createActivity.addCountries(countryNames);
 
-    console.log(createActivity)
-    res.json(createActivity)
+    res.json(createActivity);
 
+ // Promise.all(countries.map((country) => createActivity.addCountries(country))).then(
+    //     () => {
+    //       res.json(createActivity);
+    //     }
+    //   );
+
+
+   
 });
+
+
 
 
 module.exports = router

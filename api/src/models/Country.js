@@ -13,10 +13,12 @@ module.exports = (sequelize) => {
       name: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
       },
       officialName:{
         type: DataTypes.STRING,
         allowNull: false,
+        unique:true,
       },
       flag: {
         type: DataTypes.STRING,
