@@ -12,7 +12,13 @@ const  rootReducer = (state = initialState, action) => {
           ...state,
           countries: action.payload
         }
-      
+
+        case 'GET_BY_NAME':
+        return {
+          ...state,
+          country: action.payload,
+        }
+
       default:
         return state;
     }
