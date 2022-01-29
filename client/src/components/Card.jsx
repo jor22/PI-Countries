@@ -1,7 +1,11 @@
 import React from 'react'
+import { Link} from 'react-router-dom'
 import styles from './Card.module.css'
 
-export function Country({ id, name, continent, flag }) {
+export function Country({ id,name, continent, flag }) {
+
+
+
   return (
     <div className={styles.card} key={id}>
       <div className={styles.imgContainer}>
@@ -9,9 +13,9 @@ export function Country({ id, name, continent, flag }) {
       </div>
 
       <div className={styles.textContainer}>
-        <div className={styles.link} to={`/countries/${id}`}>
+        <Link className={styles.link} to={`/countries/${id}`}>
           <h3 className={styles.country}>{name}</h3>
-        </div>
+        </Link>
         <h4 className={styles.continent}>{continent}</h4>
       </div>
     </div>
