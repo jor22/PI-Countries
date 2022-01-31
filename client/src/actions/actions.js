@@ -27,3 +27,14 @@ export let getCountryDetails = (id) => {
         dispatch({ type: 'GET_DETAILS',payload: response.data,})
     }
 }
+
+
+
+export function createActivity(details) {
+    return async function (dispatch) {
+      const newActivity = await axios.post( 'http://localhost:3001/activity',details )
+      console.log(newActivity)
+      return newActivity
+    }
+  }
+  

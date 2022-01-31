@@ -1,4 +1,5 @@
 import React  from 'react'
+import { Link } from 'react-router-dom'
 import  styles from './NavBar.module.css'
 import SearchBar from './Searchbar'
 
@@ -12,6 +13,12 @@ return (
         </h1>
       </div>
 
+    <button>
+      <Link  className={styles.btn} to='/activity'>
+        Add Activity
+      </Link>
+    </button>
+    
     <SearchBar/>
 
     </div>

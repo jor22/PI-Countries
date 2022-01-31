@@ -11,10 +11,9 @@ module.exports = (sequelize) => {
       },
       name: {
         type: DataTypes.STRING,
-        unique: true,
       },
       difficulty: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
       },
       duration: {
         type: DataTypes.STRING,

@@ -122,7 +122,7 @@ __Ruta de creación de actividad turística__: debe contener
 - [ ] Posibilidad de seleccionar/agregar varios países en simultáneo
 - [ ] Botón/Opción para crear una nueva actividad turística
 
-> Es requisito que el formulario de creación esté validado con JavaScript y no sólo con validaciones HTML. Pueden agregar las validaciones que consideren. Por ejemplo: Que el nombre de la actividad no pueda contener símbolos, que la duración no pueda exceder determinado valor, etc.
+> Es requisito que el formulario de creación esté validado con JavaScript y no sólo con validaciones HTML. Pueden agregar las validaciones que consideren. Por ejemplo: Q, quue el nombre de la actividad no pueda contener símbolose la duración no pueda exceder determinado valor, etc.
 
 #### Base de datos
 

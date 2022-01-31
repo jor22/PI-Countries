@@ -5,6 +5,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  height: max-content;
+  background-image: url('./assets/wallpaper.jpg');
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+
 }
 
 code {

@@ -10,7 +10,7 @@ const activities = require('./activities')
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 router.use('/countries', countries)
-router.use('/activities', activities)
+router.use('/activity', activities)
 
 
 module.exports = router;

@@ -4,9 +4,10 @@ const router = Router()
 
 
 router.post('/', async (req, res) =>{
-    // crear actividad y hacer la relacion con el coutry 
-    // try-catch
-    const { country ,name ,difficulty,duration,season } = req.body
+
+    console.log(req.body)
+    const { countries ,name ,difficulty,duration,season } = req.body
+
 
     const createActivity = await Activity.create({
         name,
@@ -15,7 +16,7 @@ router.post('/', async (req, res) =>{
         season
     })
 
-    const countryNames = await Country.findAll({ where: { name: country } }); //busco el name en db countries
+    const countryNames = await Country.findAll({ where: { name: countries } }); //busco el name en db countries
     console.log(countryNames);
     
     await createActivity.addCountries(countryNames);  //addCountries mixer de sequelize 

@@ -48,6 +48,9 @@ export default function Detail(){
           <h4>Population: {details.population}</h4>
           <h4>Area: {details.area} km²</h4>
           <h4 className={styles.activities}>Activities:</h4>
+          
+
+
           <Link to='/countries'>
             <button className={styles.btn}>Go back</button>
           </Link>
