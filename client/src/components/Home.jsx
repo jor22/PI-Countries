@@ -48,9 +48,9 @@ export default function Home() {
 
 
     let indexOfLastCountry = currentPage * countriesPerPage
-    let indexOfirstCountry = (indexOfLastCountry +1 )  - countriesPerPage  
+    let indexOfirstCountry = (indexOfLastCountry +1 ) - countriesPerPage  
     //si current page = 1 muestra los elementos de  0 al 10 , si current page >= 2  muestra del ultimo elemento en este caso el (10)+1 = 11   
-    let currentCountries =currentPage ==1?countries.slice( 0 , 10 ):countries.slice( indexOfirstCountry , indexOfLastCountry) 
+    let currentCountries = currentPage==1? countries.slice( 0 , 10 ) : countries.slice( indexOfirstCountry , indexOfLastCountry) 
 
 
     return (
