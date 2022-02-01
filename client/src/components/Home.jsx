@@ -10,11 +10,10 @@ import Pagination from './pagination';
 
 export default function Home() {
     const dispatch = useDispatch()
-    const {countries} = useSelector((state) => state)
+    const {countries } = useSelector((state) => state)
     
     const [currentPage, setCurrentPage] = useState(1)
-    const countriesPerPage = 10
-    const countriesFirstPage = 9
+    const countriesPerPage =  10 
     
     const pages = (pageNum) => {
       setCurrentPage(pageNum)
@@ -44,13 +43,14 @@ export default function Home() {
         e.preventDefault()
         dispatch(sort(e.target.value))
         setCurrentPage(1)
-
     }
 
 
-    var indexOfLastCountry = currentPage * countriesPerPage 
-    var indexOfirstCountry = indexOfLastCountry - countriesPerPage
-    var currentCountries = countries.slice( indexOfirstCountry , indexOfLastCountry) 
+
+    let indexOfLastCountry = currentPage * countriesPerPage
+    let indexOfirstCountry = (indexOfLastCountry +1 )  - countriesPerPage  
+    //si current page = 1 muestra los elementos de  0 al 10 , si current page >= 2  muestra del ultimo elemento en este caso el (10)+1 = 11   
+    let currentCountries =currentPage ==1?countries.slice( 0 , 10 ):countries.slice( indexOfirstCountry , indexOfLastCountry) 
 
 
     return (
