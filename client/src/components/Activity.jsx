@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from "react-router-dom";
 import { createActivity, getAll } from "../actions/actions";
+import styles from "./Activity.module.css"
 
 
 
@@ -74,12 +75,12 @@ export default function Activity() {
 
     return (
 
-        <div>
-            <div>
+        <div className={styles.container} >
+            <div className={styles.card}>
                 <form onSubmit={handleSumit}>
-                    <h1> ADD touristic Activity </h1>
-                    <div>
-                        <label htmlFor="name" >Name:</label>
+                    <h1 className={styles.title}> ADD Activity </h1>
+                    <div  className={styles.form}>
+                        <label className={styles.label} htmlFor="name" >Name:</label>
                         <input
                             type='text'
                             name='name'
@@ -89,8 +90,8 @@ export default function Activity() {
                         </input>
                     </div>
 
-                    <div>
-                        <label htmlFor="name" >Difficulty:</label>
+                    <div className={styles.form} >
+                        <label  className={styles.label}  htmlFor="name" >Difficulty:</label>
                         <select
                             type='text'
                             name='difficulty'
@@ -106,8 +107,8 @@ export default function Activity() {
                         </select>
                     </div>
 
-                    <div>
-                        <label htmlFor="duration" >Duration:</label>
+                    <div className={styles.form} >
+                        <label className={styles.label}  htmlFor="duration" >Duration:</label>
                         <input
                             type='text'
                             name='duration'
@@ -117,8 +118,8 @@ export default function Activity() {
                         </input>
                     </div>
 
-                    <div>
-                        <label htmlFor="season" >Season:</label>
+                    <div className={styles.form} >
+                        <label className={styles.label}  htmlFor="season" >Season:</label>
                         <select
                             type='text'
                             name='season'
@@ -134,8 +135,8 @@ export default function Activity() {
                     </div>
 
 
-                    <div>
-                        <label html='country'>Country:</label>
+                    <div className={styles.form} >
+                        <label className={styles.label}  html='country'>Country:</label>
                         <select name="countries" onChange={handleChange} >
                             <option value="">Country</option>
                             {countries.map((country) => (
@@ -144,20 +145,22 @@ export default function Activity() {
                         </select>
                     </div>
 
-                    <ul>
-                        <li>{input.countries?.map((country) => `${country}`)}</li>
+                    <ul >
+                        <li className={styles.ul} >{input.countries?.map((country) => `${country} | ` )}</li>
                     </ul>
 
-                    <button type='submit'>
-                        Add Activity
-                    </button>
-
-                    <Link  to='/countries'>
-                     <button>
-                        Go Home!
-                     </button>
+                    <div>
+                        <button className={styles.btn}  type='submit'>
+                            Add Activity
+                        </button>
+                    </div>
+                    <div>
+                        <Link  to='/countries'>
+                        <button className={styles.btnHome} >
+                            Go Home
+                        </button>
                     </Link>
-
+                    </div>
                 </form>
             </div>
         </div>

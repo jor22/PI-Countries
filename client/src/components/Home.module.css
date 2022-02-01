@@ -3,18 +3,17 @@
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    /* background-image: url('../assets/wallpaper.jpg');
-    background-size: cover; */
     padding: 0;
   }
   
   .countryContainer {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
+    grid-template-rows: minmax(20px,auto);
+    gap: 2em;
     background: none;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+    align-items: center; 
     justify-content: center;
     margin-bottom: 5vh;
-    padding: 5vh 0;
+    padding: 5vh ; 
   }

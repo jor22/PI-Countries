@@ -12,9 +12,6 @@ export default function Detail(){
     const dispatch = useDispatch()
     const details = useSelector((state) => state.country)
 
-    console.log(' log  del id desde details', useParams(id))
-    console.log(details)
-
     useEffect(() => {
         
         dispatch(getCountryDetails(id))
@@ -22,11 +19,7 @@ export default function Detail(){
     }, [] )
 
 
-
     return(
-
-      
-
 
     <div className={styles.container}>
       <div className={styles.card}>
@@ -49,7 +42,17 @@ export default function Detail(){
           <h4>Area: {details.area} km²</h4>
           <h4 className={styles.activities}>Activities:</h4>
           
-
+          <ul>
+            {details.Activities &&
+              details.Activities.map((activity) => (
+                <li key={activity.id}  className={styles.li}>
+                  <p>
+                    <strong>{activity.name}</strong> ({activity.season}) | Duration:{' '}
+                    {activity.duration} - Difficulty: {activity.difficulty}
+                  </p>
+                </li>
+              ))}
+          </ul>
 
           <Link to='/countries'>
             <button className={styles.btn}>Go back</button>

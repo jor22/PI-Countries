@@ -19,4 +19,15 @@ describe('Country model', () => {
       });
     });
   });
+  describe('Country', () => {
+    it('should throw an error if no continent is provided', (done) => {
+      Country.create({
+        flag: 'https://restcountries.eu/data/col.svg',
+        name: 'Colombia',
+      })
+        .then(() => done(new Error('Please provide a valid continent')))
+        .catch(() => done())
+    })
+  })
 });
+

@@ -58,7 +58,8 @@
     margin-bottom: 0;
   }
   
-  ul li {
+  .li {
+    color: black;
     margin: 0;
     padding: 0;
   }
@@ -66,15 +67,15 @@
   .btn {
     width: 50%;
     background-color: #f3f1ed;
-    border: 1px solid #776262;
+    border: 1px solid #ffffff;
     line-height: 2rem;
     font-size: 1rem;
   }
   
   .btn:hover {
     cursor: pointer;
-    background-color: #776262;
-    color: #f3f1ed;
-    border: 1px solid #776262;
+    background-color: #ffffff;
+    color: #ffffff;
+    border: 1px solid #ffffff;
   }
   
